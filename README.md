@@ -21,43 +21,24 @@ Zonos/                          ← 프로젝트 최상위 폴더
 ## Prerequisites
 
 ### 1. System Requirements
-- Ubuntu 22.04/24.04
-- (Hybrid) NVIDIA RTX 3000-series 이상 권장, 최소 6GB VRAM  
-- CPU 실행 가능하나 속도 저하 발생
+- Ubuntu 22.04/24.04 또는 기타 Linux 배포판
+- NVIDIA GPU(6GB VRAM 이상), 비GPU 환경도 동작하나 성능 저하 발생
 
-### 2. System Dependencies (Zonos)
-Zonos는 **eSpeak** 기반 phonemization을 사용합니다.
+### 2. System Dependencies (Ubuntu)
+Zonos 텍스트 전처리(phonemization) 및 강의 비디오 변환에 필요한 시스템 패키지를 설치합니다:
 ```bash
-# Ubuntu
 sudo apt update
-sudo apt install -y espeak-ng
-
+sudo apt install -y espeak-ng       # eSpeak 기반 phonemization
+sudo apt install -y libreoffice      # PPTX → PDF 변환 도구
+sudo apt install -y poppler-utils    # PDF → 이미지 변환 도구
+sudo apt install -y ffmpeg           # 오디오/비디오 인코딩
 ```
 
-강의 비디오 변환용 추가 도구:
-```bash
-sudo apt install -y libreoffice poppler-utils ffmpeg
-```
-
-### 3. Python Dependencies (Zonos & App)
-Zonos 설치 권장 절차 (uv 환경 관리자):
-```bash
-pip install -U uv
-uv sync
-uv sync --extra compile
-uv pip install -e .
-```
-앱 의존성은 `requirements.txt`로 관리:
+### 3. Python Dependencies
+앱 의존성은 `requirements.txt`로 관리합니다:
 ```bash
 pip install -r requirements.txt
 ```
-환경 변수 설정:
-```text
-.env
-├─ OPENAI_API_KEY=sk-...
-└─ REPLICATE_API_TOKEN=rp-...
-```
-`.gitignore`에 `.env` 추가하여 커밋 제외
 
 ## Installation
 
