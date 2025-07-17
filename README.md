@@ -21,7 +21,7 @@ Zonos/                          ← 프로젝트 최상위 폴더
 ## Prerequisites
 
 ### 1. System Requirements
-- Ubuntu 22.04/24.04 또는 macOS  
+- Ubuntu 22.04/24.04
 - (Hybrid) NVIDIA RTX 3000-series 이상 권장, 최소 6GB VRAM  
 - CPU 실행 가능하나 속도 저하 발생
 
