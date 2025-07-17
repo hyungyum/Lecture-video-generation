@@ -18,68 +18,65 @@ Zonos/                          ← 프로젝트 최상위 폴더
 └─ README.md                    ← 프로젝트 설명 파일
 ```
 
-## Prerequisites
+## Quick Start
 
-### 1. System Requirements
-- Ubuntu 22.04/24.04 또는 기타 Linux 배포판
-- NVIDIA GPU(6GB VRAM 이상), 비GPU 환경도 동작하나 성능 저하 발생
+아래 순서대로 한 줄씩 실행하면 프로젝트를 처음부터 끝까지 설정하고 실행할 수 있습니다.
 
-### 2. System Dependencies (Ubuntu)
-Zonos 텍스트 전처리(phonemization) 및 강의 비디오 변환에 필요한 시스템 패키지를 설치합니다:
-```bash
-sudo apt update
-sudo apt install -y espeak-ng       # eSpeak 기반 phonemization
-sudo apt install -y libreoffice      # PPTX → PDF 변환 도구
-sudo apt install -y poppler-utils    # PDF → 이미지 변환 도구
-sudo apt install -y ffmpeg           # 오디오/비디오 인코딩
-```
-
-### 3. Python Dependencies
-- **Zonos 설치** (개발 모드 및 하이브리드 모델 컴파일 의존성 포함):
-  ```bash
-  pip install -e .
-  pip install --no-build-isolation -e .[compile]
-  ```
-- **앱 의존성**: `requirements.txt`로 관리
-  ```bash
-  pip install -r requirements.txt
-  ```
-
-## Installation
-
-1. **Zonos** 저장소 클론
+1. **Zonos 저장소 클론**
    ```bash
    git clone https://github.com/Zyphra/Zonos.git
    cd Zonos
    ```
-2. **Lecture Video Generation** 저장소 클론
+2. **시스템 의존성 설치 (Ubuntu)**
+   ```bash
+   sudo apt update
+   sudo apt install -y espeak-ng libreoffice poppler-utils ffmpeg
+   ```
+3. **Zonos Python 모듈 설치**
+   ```bash
+   pip install -e .
+   pip install --no-build-isolation -e .[compile]
+   ```
+4. **원본 위치로 이동 & Lecture Video Generation 저장소 클론**
    ```bash
    cd ~/Desktop/streamlit
    git clone https://github.com/hyungyum/Lecture-video-generation.git Zonos
    cd Zonos
    ```
-3. 시스템 의존성 설치 (eSpeak, LibreOffice, Poppler, FFmpeg)
-4. Python 패키지 설치
+5. **앱 의존성 설치**
    ```bash
    pip install -r requirements.txt
    ```
+6. **환경 변수 설정**
+   프로젝트 루트에 `.env` 파일 생성 후 다음을 추가하세요.
+   ```text
+   OPENAI_API_KEY=sk-...
+   REPLICATE_API_TOKEN=rp-...
+   ```
+   `.gitignore`에 `.env`를 추가하여 Git 추적에서 제외합니다.
+7. **앱 실행**
+   ```bash
+   streamlit run mmmaaaiiinnn.py
+   ```
 
-## Usage
-앱 실행:
-```bash
-streamlit run mmmaaaiiinnn.py
+## Project Structure
+```
+Zonos/                          ← 프로젝트 최상위 폴더
+├─ mmmaaaiiinnn.py              ← Streamlit 앱 진입점
+├─ samples/                     ← 예제 PPT 및 영상 파일
+│   ├─ 딥러닝.pptx
+│   ├─ 미국의 역사.pptx
+│   ├─ 딥러닝.mp4
+│   └─ 미국의 역사.mp4
+├─ .env                         ← API 키 보관 (Git 추적 제외)
+├─ requirements.txt             ← Python 패키지 목록
+└─ README.md                    ← 프로젝트 설명 파일
 ```
 
-### Modes
-- **강의 자료 생성**: PDF 기반으로 슬라이드 텍스트를 추출하고 프레젠테이션 자료(PPTX) 생성을 지원합니다.
-- **강의 영상 생성**: PDF/PPTX로부터 멀티모달 강의 비디오(mp4) 파일을 생성합니다.
-
-1. 사이드바에서 모드 선택  
-2. 파일 업로드 → **변환 시작** 클릭  
-3. 스크립트 생성 → 음성 합성 → 이미지 생성 → 비디오 합성  
-4. 완료 후 다운로드
+## Modes
+- **강의 자료 생성**: PDF 기반 슬라이드 텍스트 추출 및 PPTX 생성
+- **강의 영상 생성**: PDF/PPTX 기반 멀티모달 강의 비디오 생성 (.mp4)
 
 ## License
-**MIT License**  
-이 프로젝트는 MIT License 하에 배포됩니다.  
-MIT License는 사용, 복사, 수정, 병합, 게시, 배포, 서브라이선스, 판매 권한을 허용하며, 소스 코드에 원본 라이선스 고지를 포함해야 합니다.
+**MIT License**
+이 프로젝트는 MIT License 하에 배포됩니다. 사용·복사·수정·배포 권한이 허용되며, 소스 코드에 원본 라이선스 고지를 포함해야 합니다.
