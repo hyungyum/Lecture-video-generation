@@ -18,8 +18,6 @@ Zonos/                          ← 프로젝트 최상위 폴더
 ├─ requirements.txt             ← Python 패키지 목록
 └─ README.md                    ← 프로젝트 설명 파일
 
-````
-
 ## Prerequisites
 
 ### 1. System Requirements
