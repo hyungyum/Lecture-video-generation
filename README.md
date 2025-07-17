@@ -39,8 +39,8 @@ Zonos/                          ← 프로젝트 최상위 폴더
    ```
 4. **원본 위치로 이동 & Lecture Video Generation 저장소 클론**
    ```bash
-   cd ~/Desktop/streamlit
-   git clone https://github.com/hyungyum/Lecture-video-generation.git Zonos
+   cd your_repo/
+   git clone https://github.com/hyungyum/Lecture-video-generation.git
    cd Zonos
    ```
 5. **앱 의존성 설치**
@@ -51,7 +51,6 @@ Zonos/                          ← 프로젝트 최상위 폴더
    프로젝트 루트에 `.env` 파일 생성 후 다음을 추가하세요.
    ```text
    OPENAI_API_KEY=sk-...
-   REPLICATE_API_TOKEN=rp-...
    ```
    `.gitignore`에 `.env`를 추가하여 Git 추적에서 제외합니다.
 7. **앱 실행**
@@ -77,6 +76,3 @@ Zonos/                          ← 프로젝트 최상위 폴더
 - **강의 자료 생성**: PDF 기반 슬라이드 텍스트 추출 및 PPTX 생성
 - **강의 영상 생성**: PDF/PPTX 기반 멀티모달 강의 비디오 생성 (.mp4)
 
-## License
-**MIT License**
-이 프로젝트는 MIT License 하에 배포됩니다. 사용·복사·수정·배포 권한이 허용되며, 소스 코드에 원본 라이선스 고지를 포함해야 합니다.
