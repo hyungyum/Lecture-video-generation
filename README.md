@@ -1,8 +1,4 @@
-# Lecture-video-generation
 
-
-
-```markdown
 # Lecture Video Generation
 
 ## Overview
@@ -10,7 +6,6 @@
 `.pptx` 또는 `.pdf` 문서로부터 자동으로 **멀티모달 강의 비디오**를 생성합니다.
 
 ## Project Structure
-```
 
 Zonos/                          ← 프로젝트 최상위 폴더
 ├─ mmmaaaiiinnn.py              ← Streamlit 앱 진입점
