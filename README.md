@@ -35,10 +35,15 @@ sudo apt install -y ffmpeg           # 오디오/비디오 인코딩
 ```
 
 ### 3. Python Dependencies
-앱 의존성은 `requirements.txt`로 관리합니다:
-```bash
-pip install -r requirements.txt
-```
+- **Zonos 설치** (개발 모드 및 하이브리드 모델 컴파일 의존성 포함):
+  ```bash
+  pip install -e .
+  pip install --no-build-isolation -e .[compile]
+  ```
+- **앱 의존성**: `requirements.txt`로 관리
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 ## Installation
 
