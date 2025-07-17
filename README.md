@@ -4,6 +4,11 @@
 이 프로젝트는 **Zonos**의 오픈소스 TTS 모델과 **OpenAI API**, **Streamlit UI**를 결합하여  
 `.pptx` 또는 `.pdf` 문서로부터 자동으로 **멀티모달 강의 비디오**를 생성합니다.
 
+
+## Requirements
+- **OS**: Ubuntu 22.04/24.04 이상 제안 (다른 리눅스 배포판 사용 가능하나 미검증)
+- **GPU**: NVIDIA GPU 권장 (최소 6GB VRAM), CPU 환경 실행 시 성능 저하 발생
+- 
 ## Project Structure
 ```
 Zonos/                          ← 프로젝트 최상위 폴더
