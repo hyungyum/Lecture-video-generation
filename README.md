@@ -32,8 +32,6 @@ Zonos는 **eSpeak** 기반 phonemization을 사용합니다.
 sudo apt update
 sudo apt install -y espeak-ng
 
-# macOS
-brew install espeak-ng
 ```
 
 강의 비디오 변환용 추가 도구:
